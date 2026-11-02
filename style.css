@@ -1,0 +1,695 @@
+/* =========================================
+   1. VARIABLES & SETUP
+========================================= */
+:root {
+    --bg-dark: #07070b;
+    --accent-cyan: #00f0ff;
+    --accent-violet: #7000ff;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    
+    /* Glassmorphism Variables */
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-glow: rgba(0, 240, 255, 0.1);
+    
+    /* Layout */
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. AMBIENT ANIMATED BACKGROUND
+========================================= */
+.ambient-background, .ambient-background-2 {
+    position: fixed;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.4;
+    animation: float 20s infinite alternate ease-in-out;
+}
+
+.ambient-background {
+    background: radial-gradient(circle, var(--accent-violet) 0%, transparent 60%);
+    top: -10%;
+    left: -10%;
+}
+
+.ambient-background-2 {
+    background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 60%);
+    bottom: -10%;
+    right: -10%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(10vw, 10vh) scale(1.2); }
+}
+
+/* =========================================
+   3. NAVIGATION (CSS-Only Mobile Friendly)
+========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(7, 7, 11, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-cyan);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a:focus-visible {
+    color: var(--accent-cyan);
+}
+
+.btn-nav {
+    border: 1px solid var(--accent-cyan);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    color: var(--accent-cyan) !important;
+}
+
+.btn-nav:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 15px var(--glass-glow);
+}
+
+/* CSS Hamburger Hack */
+.nav-toggle, .nav-toggle-label {
+    display: none;
+}
+
+/* =========================================
+   4. GLOBAL COMPONENTS & TYPOGRAPHY
+========================================= */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 100px 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-title span {
+    color: var(--accent-cyan);
+}
+
+.highlight-cyan { color: var(--accent-cyan); }
+.highlight-violet { color: var(--accent-violet); }
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--accent-cyan);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-primary);
+    background: rgba(255,255,255,0.05);
+}
+
+/* =========================================
+   5. HERO SECTION
+========================================= */
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 120px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-inline: 2rem;
+}
+
+.role-label {
+    color: var(--accent-violet);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* 3D Image Wrapper */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floatImage 6s ease-in-out infinite;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(112, 0, 255, 0.4);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, var(--bg-dark) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.glow-ring {
+    position: absolute;
+    width: 380px;
+    height: 480px;
+    border: 2px solid rgba(112, 0, 255, 0.4);
+    border-radius: 12px;
+    z-index: -1;
+    transform: rotate(5deg);
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* =========================================
+   6. SKILLS SECTION
+========================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.skill-card h3 {
+    /* Skill Icons */
+.skill-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+    color: var(--text-secondary); /* Base color */
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* When the card is hovered, make the icon light up cyan and bounce slightly */
+.skill-card:hover .skill-icon {
+    color: var(--accent-cyan);
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.5)); /* Adds a glowing effect */
+}
+
+.feature-skill:hover .skill-icon {
+    color: var(--accent-violet);
+    filter: drop-shadow(0 0 8px rgba(112, 0, 255, 0.5));
+}
+    color: var(--accent-cyan);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border-color: rgba(0, 240, 255, 0.4);
+}
+
+.feature-skill {
+    background: linear-gradient(135deg, rgba(112, 0, 255, 0.1), rgba(0, 240, 255, 0.05));
+    border-color: rgba(112, 0, 255, 0.3);
+}
+
+/* =========================================
+   7. PROJECTS SECTION (CSS 3D Effects)
+========================================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    perspective: 1000px;
+}
+
+.project-content {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover .project-content {
+    transform: rotateX(4deg) rotateY(-4deg) scale(1.02);
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.5), inset 0 0 0 1px var(--accent-cyan);
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    color: var(--accent-violet);
+    font-weight: 600;
+}
+
+.project-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn-text {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.btn-text:hover {
+    color: var(--accent-cyan);
+}
+
+/* =========================================
+   8. HOBBY SECTION
+========================================= */
+.hobby-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, rgba(112, 0, 255, 0.05) 100%);
+}
+
+.hobby-text h3 {
+    color: var(--accent-cyan);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* CSS Abstract Cricket Graphic */
+.hobby-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    height: 200px;
+    position: relative;
+}
+
+.stump {
+    width: 12px;
+    height: 120px;
+    background: linear-gradient(to bottom, #d4af37, #8b6508);
+    border-radius: 4px 4px 0 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.ball {
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle at 30% 30%, #ff4b4b, #990000);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.5), 5px 5px 10px rgba(0,0,0,0.4);
+}
+
+/* =========================================
+   9. CONTACT SECTION
+========================================= */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-disclaimer {
+    font-size: 0.85rem;
+    color: #ffaa00;
+    background: rgba(255, 170, 0, 0.1);
+    padding: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    border: none;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   10. FOOTER
+========================================= */
+footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 3rem 2rem;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+}
+
+.footer-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Helps on small mobile screens */
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+/* Style the SVG inside the button */
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects for the contact buttons */
+.social-btn:hover {
+    color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    background: rgba(0, 240, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.social-btn:hover svg {
+    transform: scale(1.2);
+}
+
+.social-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-violet);
+}
+
+.footer-content p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   11. RESPONSIVE DESIGN (Media Queries)
+========================================= */
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    .hero-desc {
+        margin: 0 auto 2.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hobby-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hobby-graphic {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.8rem; }
+    .section-title { font-size: 2rem; }
+    
+    /* Mobile Menu Hack Implementation */
+    .nav-toggle-label {
+        display: block;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+    
+    .hamburger {
+        display: block;
+        position: relative;
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        transition: 0.3s;
+    }
+    
+    .hamburger::before, .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--text-primary);
+        transition: 0.3s;
+        left: 0;
+    }
+    
+    .hamburger::before { top: -8px; }
+    .hamburger::after { top: 8px; }
+    
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(7, 7, 11, 0.95);
+        flex-direction: column;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--glass-border);
+    }
+    
+    /* When checkbox is checked, show the menu */
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+    
+    /* Animate Hamburger into an X */
+    .nav-toggle:checked ~ .nav-toggle-label .hamburger { background: transparent; }
+    .nav-toggle:checked ~ .nav-toggle-label .hamburger::before { transform: rotate(45deg); top: 0; }
+    .nav-toggle:checked ~ .nav-toggle-label .hamburger::after { transform: rotate(-45deg); top: 0; }
+}
+
+/* Accessibility: Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+}

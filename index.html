@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Intkhab Haider | Portfolio</title>
+    
+    <!-- Modern Futuristic Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background layers -->
+    <div class="ambient-background"></div>
+    <div class="ambient-background-2"></div>
+
+    <!-- NAVIGATION (CSS-only mobile menu using checkbox hack) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Muhammad Intkhab Haider<span>.</span></a>
+            
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span class="hamburger"></span>
+            </label>
+            
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#hobby">Hobby</a>
+                <a href="#contact" class="btn-nav">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <p class="role-label">COMPUTER SCIENCE GRADUATE</p>
+                <h1>Building Digital Experiences with <span class="highlight-cyan">Code</span> & <span class="highlight-violet">Creativity</span></h1>
+                <p class="hero-desc">
+                    Hi, I am Muhammad Intkhab Haider. A CS graduate from UCP (University of Central Punjab) passionate about crafting responsive web interfaces and exploring AI-powered software.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">Explore My Work</a>
+                    <a href="#contact" class="btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- 3D floating image wrapper -->
+                <div class="image-wrapper">
+                    <!-- Placeholder: Place your photo at this path -->
+                    <img src="image/khabii.jpg" alt="Portrait of Khabii" class="profile-img">
+                    <div class="image-overlay"></div>
+                </div>
+                <!-- Decorative background elements -->
+                <div class="glow-ring"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="glass-panel about-content">
+                <p>
+                    I recently graduated with a degree in Computer Science from the <strong>University of Central Punjab (UCP)</strong>. My journey into tech is driven by an intense curiosity for how things work under the hood. 
+                </p>
+                <p>
+                    As an early-career developer, I focus on consistent learning and practical execution. I am deeply interested in <strong>Web Development</strong> and the growing field of <strong>AI & Machine Learning</strong>. I believe in building honest, functional, and visually compelling digital products. When I am not coding, I bridge the gap between logic and art through digital media.
+                </p>
+            </div>
+        </section>
+
+      <!-- SKILLS SECTION (Updated with SVG Icons) -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Technical <span>Skills</span></h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <!-- HTML5 / CSS3 Icon -->
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M10 13l-2 2 2 2"></path><path d="M14 17l2-2-2-2"></path></svg>
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Semantic markup, responsive design, and advanced CSS styling.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <!-- Responsive Design Icon -->
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    <h3>Responsive Web Design</h3>
+                    <p>Fluid layouts, CSS Grid/Flexbox, and mobile-first approach.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <!-- Python Icon -->
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C7 2 7 5.5 7 5.5v2.5h5v1H6s-4 0-4 4.5 4 4.5 4 4.5h1.5v-2.5C7.5 12 10.5 12 10.5 12h3s3 0 3-4.5-3-4.5-3-4.5h-1.5z"></path><path d="M12 22c5 0 5-3.5 5-3.5v-2.5h-5v-1h6s4 0 4-4.5-4-4.5-4-4.5h-1.5v2.5C16.5 12 13.5 12 13.5 12h-3s-3 0-3 4.5 3 4.5 3 4.5h1.5z"></path></svg>
+                    <h3>Python (Basic)</h3>
+                    <p>Foundational programming, scripting, and early AI exploration.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <!-- C++ Icon (Gear/Logic) -->
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    <h3>C++ (Basic)</h3>
+                    <p>Object-oriented programming concepts and logic building.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <!-- AI Icon (Brain/Network) -->
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <h3>AI & Software Projects</h3>
+                    <p>Beginner-level development of AI-powered conversational tools.</p>
+                </div>
+                
+                <div class="skill-card feature-skill">
+                    <!-- Photo/Video Icon -->
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                    <h3>Photo & Video Editing</h3>
+                    <p>Creative digital media manipulation and visual storytelling.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Recent <span>Projects</span></h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">AI / NLP</span>
+                            <span class="tag">Software Dev</span>
+                        </div>
+                        <h3>LeadbotX</h3>
+                        <p>An organizational conversational assistant designed to help users query complex organizational data using natural language. Focused on logical data flow and user-friendly interaction.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn-text">Live Demo ↗</a>
+                            <a href="#" class="btn-text">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Web Dev</span>
+                        </div>
+                        <h3>Modern Web Components</h3>
+                        <p>A collection of responsive web development projects including a high-converting landing page, dynamic product cards, and a fully styled contact form interface.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn-text">Live Demo ↗</a>
+                            <a href="#" class="btn-text">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HOBBY SECTION -->
+        <section id="hobby" class="section hobby-section">
+            <div class="hobby-container glass-panel">
+                <div class="hobby-text">
+                    <h2 class="section-title">Beyond The <span>Code</span></h2>
+                    <h3>Passion for Cricket</h3>
+                    <p>When I step away from the screen, you will find me on the cricket field. Playing cricket is my ultimate hobby. It teaches me teamwork, strategic thinking, and the importance of adapting to fast-paced situations—skills that translate perfectly back into software development and problem-solving.</p>
+                </div>
+                <!-- CSS-only abstract cricket pitch graphic -->
+                <div class="hobby-graphic">
+                    <div class="stump"></div>
+                    <div class="stump"></div>
+                    <div class="stump"></div>
+                    <div class="ball"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; margin-inline: auto;">
+                Currently seeking opportunities in web development and software engineering. Connect with me on social platforms or send a message below.
+            </p>
+            
+            <div class="contact-container glass-panel">
+                <!-- HTML5 semantic form -->
+                <form class="contact-form" action="#" method="get">
+                    <p class="form-disclaimer">Note: This is a front-end HTML/CSS demonstration. A backend service is required for message processing.</p>
+                    
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Hello Khabii..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+  <!-- FOOTER (Updated with SVG Contact Icons) -->
+    <footer>
+        <div class="footer-content">
+            <h2>KHABII.</h2>
+            <div class="social-links">
+                <!-- LinkedIn Icon -->
+                <a href="#" class="social-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    LinkedIn
+                </a>
+                
+                <!-- GitHub Icon -->
+                <a href="#" class="social-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    GitHub
+                </a>
+                
+                <!-- Email Icon -->
+                <a href="#" class="social-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Email
+                </a>
+            </div>
+            <p>© 2026 Khabii. Developed with HTML5 & CSS3.</p>
+        </div>
+    </footer>
+</body>
+</html>
